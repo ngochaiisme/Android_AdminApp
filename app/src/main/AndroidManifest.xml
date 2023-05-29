@@ -15,7 +15,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".CapNhapSanPham"
+            android:name=".activity.CapNhapSanPham"
             android:exported="false"
             android:label="@string/title_activity_cap_nhap_san_pham"
             android:theme="@style/Theme.Appbanhang_admin.NoActionBar" />

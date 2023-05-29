@@ -1,6 +1,8 @@
 package ngochaiisme.com.vn.model;
 
-public class model_Sanpham {
+import java.io.Serializable;
+
+public class model_Sanpham implements Serializable {
     private int id;
     private String tensp;
     private float giatien;

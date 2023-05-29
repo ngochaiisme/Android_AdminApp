@@ -4,6 +4,7 @@ import static java.security.AccessController.getContext;
 import android.content.Context;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,11 +18,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 
+import java.io.Serializable;
 import java.text.DecimalFormat;
 import java.util.List;
 
 import ngochaiisme.com.vn.APIService;
 import ngochaiisme.com.vn.R;
+import ngochaiisme.com.vn.activity.CapNhapSanPham;
 import ngochaiisme.com.vn.model.model_Sanpham;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -69,7 +72,7 @@ public class SanPhamAdapter extends RecyclerView.Adapter<SanPhamAdapter.SanPhamV
             return list_sanpham.size();
         return 0;
     }
-    class SanPhamViewHolder extends RecyclerView.ViewHolder implements View.OnLongClickListener {
+    class SanPhamViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
         ImageView img_hinhanh;
         TextView tv_ten, tv_gia;
         TextView tv_soluong;
@@ -80,6 +83,7 @@ public class SanPhamAdapter extends RecyclerView.Adapter<SanPhamAdapter.SanPhamV
             tv_gia = itemView.findViewById(R.id.tv_giatien);
             tv_soluong = itemView.findViewById(R.id.tv_soluong);
             itemView.setOnLongClickListener(this);
+            itemView.setOnClickListener(this);
 
         }
         @Override
@@ -87,6 +91,13 @@ public class SanPhamAdapter extends RecyclerView.Adapter<SanPhamAdapter.SanPhamV
             int position = getAdapterPosition();
             showDialogToDelete(position);
             return false;
+        }
+
+        @Override
+        public void onClick(View view) {
+            int position = getAdapterPosition();
+            model_Sanpham sp = list_sanpham.get(position);
+            CapNhapSanPham(sp);
         }
         private void showDialogToDelete(final int position) {
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
@@ -110,6 +121,13 @@ public class SanPhamAdapter extends RecyclerView.Adapter<SanPhamAdapter.SanPhamV
             builder.show();
         }
 
+
+        private void CapNhapSanPham(model_Sanpham sp){
+            Intent i = new Intent(context, CapNhapSanPham.class);
+            i.putExtra("sanpham", (Serializable) sp);
+            context.startActivity(i);
+        }
+
         private void DeleteSanPham(int i){
             Call<Void> call = APIService.service.deleteProduct(i);
             call.enqueue(new Callback<Void>() {
@@ -124,6 +142,8 @@ public class SanPhamAdapter extends RecyclerView.Adapter<SanPhamAdapter.SanPhamV
                 }
             });
         }
+
+
     }
 }
 
