@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create an account"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="23dp"
+        android:layout_marginTop="40dp"
+
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/title"
+
+
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_username"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Your Username"
+            android:background="@drawable/rounded_bg"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/line2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/line1"
+
+
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_email"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Your Email"
+            android:background="@drawable/rounded_bg"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/line3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/line2"
+
+
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_phone_number"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Your Phone Number"
+            android:background="@drawable/rounded_bg"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/line4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/line3"
+        app:passwordToggleEnabled="true"
+
+
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_password"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Your Password"
+            android:inputType="textPassword"
+            android:background="@drawable/rounded_bg"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/line5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/line4"
+        app:passwordToggleEnabled="true"
+
+
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_confirm_password"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Confirm Your Password"
+            android:inputType="textPassword"
+            android:background="@drawable/rounded_bg"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_signup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/line5"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:text="Sign Up"
+        android:textAllCaps="false"
+
+        android:backgroundTint="#1877F2"
+        />
+
+    <TextView
+        android:id="@+id/haveacc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Already have an account?"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/btn_signup"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintTop_toBottomOf="@id/btn_signup" />
+
+    <TextView
+        android:id="@+id/tv_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_signup"
+        android:text="Login"
+        app:layout_constraintStart_toEndOf="@id/haveacc"
+        android:layout_marginTop="40dp"
+        android:textSize="18dp"
+        android:textColor="#17B7FF"
+        android:layout_marginStart="10dp"
+        android:textStyle="normal"
+        />
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

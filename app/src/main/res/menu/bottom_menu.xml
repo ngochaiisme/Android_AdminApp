@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/item_hopthu"
+        android:icon="@drawable/icon_hopthu"
+        android:title="Hộp thư"
+        />
+    <item android:id="@+id/item_sanpham"
+        android:icon="@drawable/icon_sanpham"
+        android:title="Sản phẩm"
+        />
+    <item android:id="@+id/item_donhang"
+        android:icon="@drawable/icon_donhang"
+        android:title="Đơn hàng"
+        />
+    <item android:id="@+id/item_thongke"
+        android:icon="@drawable/icon_thongke"
+        android:title="Thống kê"
+        />
+    <item android:id="@+id/item_dangxuat"
+        android:icon="@drawable/icon_dangxuat"
+        android:title="Thống kê"
+        />
+
+
+
+</menu>
