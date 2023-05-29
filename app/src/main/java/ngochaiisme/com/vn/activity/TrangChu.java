@@ -37,7 +37,6 @@ public class TrangChu extends AppCompatActivity {
             }
             else
                 view_page.setCurrentItem(1);
-            // Các điều kiện khác nếu cần đổ các Fragment khác
         }else
             setListener();
     }

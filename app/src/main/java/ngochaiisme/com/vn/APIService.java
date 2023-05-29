@@ -46,4 +46,16 @@ public interface APIService {
             @Field("sp_loaisp") int sp_loaisp
     );
 
+    @FormUrlEncoded
+    @POST("capnhapsanpham.php")
+    Call<Void> UpdateProduct(
+            @Field("sp_id") int sp_id,
+            @Field("sp_tensp") String sp_tensp,
+            @Field("sp_giatien") float sp_giatien,
+            @Field("sp_cauhinh") String sp_cauhinh,
+            @Field("sp_soluong") int sp_soluong,
+            @Field("sp_linkhinhanh") String sp_linkhinhanh,
+            @Field("sp_loaisp") int sp_loaisp
+    );
+
 }

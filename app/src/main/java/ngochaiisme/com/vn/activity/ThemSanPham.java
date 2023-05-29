@@ -52,7 +52,6 @@ public class ThemSanPham extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         img_hinhanhsp.setImageURI(data.getData());
-
         LoadToFirebase();
     }
 
@@ -102,6 +101,31 @@ public class ThemSanPham extends AppCompatActivity {
         return  now;
     }
 
+    private void AddProduct(){
+        Call<Void> call = APIService.service.addProduct(sp_new.getTensp(), sp_new.getGiatien(), sp_new.getCauhinh(), sp_new.getSoluong(), sp_new.getLinkhinhanh(), sp_new.getLoaisp());
+        call.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                if (response.isSuccessful()) {
+                    // Xử lý thành công
+                    Toast.makeText(getApplicationContext(), "Thêm sản phẩm thành công", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(getApplicationContext(), TrangChu.class);
+                    i.putExtra("fragment_name", "sanpham_frm");
+                    startActivity(i);
+                } else {
+                    // Xử lý lỗi
+                    Toast.makeText(getApplicationContext(), "Lỗi!!!: " + response.message(), Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                // Xử lý lỗi
+                Toast.makeText(getApplicationContext(), "Lỗi...: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -120,7 +144,7 @@ public class ThemSanPham extends AppCompatActivity {
         btn_loadhinhanh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"click?",Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getApplicationContext(),"click?",Toast.LENGTH_SHORT).show();
                 ImagePicker.with(ThemSanPham.this)
                         .crop()	  //Crop image(Optional), Check Customization for more option
                         .compress(1024)	//Final image size will be less than 1 MB(Optional)
@@ -145,32 +169,13 @@ public class ThemSanPham extends AppCompatActivity {
 
                 Log.e("check_0511", "sp_new: "+ sp_new.toString());
 
-
+                AddProduct();
 
                 // Gọi phương thức addProduct để thêm sản phẩm mới
-                Call<Void> call = APIService.service.addProduct(sp_new.getTensp(), sp_new.getGiatien(), sp_new.getCauhinh(), sp_new.getSoluong(), sp_new.getLinkhinhanh(), sp_new.getLoaisp());
-                call.enqueue(new Callback<Void>() {
-                    @Override
-                    public void onResponse(Call<Void> call, Response<Void> response) {
-                        if (response.isSuccessful()) {
-                            // Xử lý thành công
-                            Toast.makeText(getApplicationContext(), "Thêm sản phẩm thành công", Toast.LENGTH_SHORT).show();
-                            Intent i = new Intent(getApplicationContext(), TrangChu.class);
-                            i.putExtra("fragment_name", "sanpham_frm");
-                            startActivity(i);
-                        } else {
-                            // Xử lý lỗi
-                            Toast.makeText(getApplicationContext(), "Lỗi!!!: " + response.message(), Toast.LENGTH_SHORT).show();
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<Void> call, Throwable t) {
-                        // Xử lý lỗi
-                        Toast.makeText(getApplicationContext(), "Lỗi...: " + t.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });
             }
         });
+
     }
+
+
 }

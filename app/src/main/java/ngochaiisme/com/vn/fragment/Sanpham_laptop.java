@@ -1,5 +1,6 @@
 package ngochaiisme.com.vn.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -15,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -23,6 +25,7 @@ import java.util.List;
 
 import ngochaiisme.com.vn.APIService;
 import ngochaiisme.com.vn.R;
+import ngochaiisme.com.vn.activity.ThemSanPham;
 import ngochaiisme.com.vn.adapter.SanPhamAdapter;
 import ngochaiisme.com.vn.model.model_Sanpham;
 import retrofit2.Call;
@@ -40,11 +43,13 @@ public class Sanpham_laptop extends Fragment {
 
     TextView tv_soluongsp;
 
+    FloatingActionButton btn_them;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mView = inflater.inflate(R.layout.fragment_sanpham_item,container,false);
-
+        btn_them = mView.findViewById(R.id.btn_them);
         tv_soluongsp = mView.findViewById(R.id.tv_soluong);
         list_sanpham_laptop = new ArrayList<model_Sanpham>();
         rcv_data = mView.findViewById(R.id.rcv_dssp);
@@ -53,6 +58,15 @@ public class Sanpham_laptop extends Fragment {
         LinearLayoutManager abc = new LinearLayoutManager(getContext());
         rcv_data.setLayoutManager(abc);
         LoadSanPham();
+
+        btn_them.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //  Toast.makeText(getContext(),"hehe",Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(getContext(), ThemSanPham.class);
+                startActivity(i);
+            }
+        });
         return mView;
     }
 

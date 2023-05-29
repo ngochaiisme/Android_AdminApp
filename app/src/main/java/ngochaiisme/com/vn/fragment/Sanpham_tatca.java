@@ -77,12 +77,9 @@ public class Sanpham_tatca extends Fragment {
         btn_them.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(),"hehe",Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(getContext(),"hehe",Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(getContext(),ThemSanPham.class);
                 startActivity(i);
-
-
-
             }
         });
     }
