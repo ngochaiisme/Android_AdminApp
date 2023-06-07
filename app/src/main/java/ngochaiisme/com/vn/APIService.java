@@ -6,6 +6,8 @@ import com.google.gson.GsonBuilder;
 import java.util.List;
 
 import ngochaiisme.com.vn.model.model_Sanpham;
+import ngochaiisme.com.vn.model.model_donhang;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -30,6 +32,12 @@ public interface APIService {
 
     @GET("getsanpham.php")
     Call<List<model_Sanpham>> getAllProducts();
+
+    @GET("getdonhang.php")
+    Call<List<model_donhang>> getAllDonhang();
+
+    @GET("get_tenkh.php")
+    Call<ResponseBody> getTenKhachHang(@Query("id") String id);
 
     @DELETE("deletesanpham.php")
     Call<Void> deleteProduct(@Query("id") int id);

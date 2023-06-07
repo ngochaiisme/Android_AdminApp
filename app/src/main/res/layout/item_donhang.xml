@@ -33,14 +33,15 @@
         />
     <TextView
         android:id="@+id/tongtien"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/tenkhachhang"
-        android:text="4.999.000đ"
+        android:text="4000đ"
         android:textColor="#2E2828"
         android:textSize="18dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="5dp"
+
+        app:layout_constraintStart_toStartOf="@id/tenkhachhang"
+
         />
     <TextView
         android:id="@+id/trangthai"

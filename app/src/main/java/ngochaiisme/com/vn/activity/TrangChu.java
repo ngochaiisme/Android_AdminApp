@@ -29,16 +29,15 @@ public class TrangChu extends AppCompatActivity {
         view_page = findViewById(R.id.view_page);
         ViewPageAdapter vp_adapter = new ViewPageAdapter(this);
         view_page.setAdapter(vp_adapter);
-
+        setListener();
         String fragmentName = getIntent().getStringExtra("fragment_name");
         if (fragmentName != null) {
             if (fragmentName.equals("sanpham_frm")) {
                 view_page.setCurrentItem(1);
-            }
-            else
+            } else
                 view_page.setCurrentItem(1);
-        }else
-            setListener();
+        }
+
     }
     private void setListener() {
 
