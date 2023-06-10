@@ -142,26 +142,17 @@ public class DonHang extends Fragment {
                     list_donhang.addAll(DHList);
                     Log.e("check_laydonhang", "size trong onResponse"+list_donhang.size() );
                     dh_adapter.notifyDataSetChanged();
-
                     LayDonHangTheoTrangThai();
-
-
                 }
             }
             @Override
             public void onFailure(Call<List<model_donhang>> call, Throwable t) {
                 Toast.makeText(getContext(),"Lỗi xảy ra khi load đơn hàng",Toast.LENGTH_SHORT).show();
                 //Log.e("check_0511",t.getMessage());
-
             }
         });
-
-
-
         Log.e("check_laydonhang", "size trong loaddonhang"+list_donhang.size() );
     }
-
-
 
     private void InitSpinner(){
         spinner = mView.findViewById(R.id.spinner);

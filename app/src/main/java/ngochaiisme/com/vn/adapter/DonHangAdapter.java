@@ -1,5 +1,6 @@
 package ngochaiisme.com.vn.adapter;
 
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import java.util.List;
 
 import ngochaiisme.com.vn.APIService;
 import ngochaiisme.com.vn.R;
+import ngochaiisme.com.vn.activity.ChiTietDonHang;
 import ngochaiisme.com.vn.model.model_donhang;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -74,7 +76,7 @@ public class DonHangAdapter extends RecyclerView.Adapter<DonHangAdapter.DonHangV
         return list_donhang.size();
     }
 
-    class DonHangViewHolder extends RecyclerView.ViewHolder {
+    class DonHangViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         TextView tv_ngaydathang,tv_tenkhachhang,tv_tongtien,tv_trangthai;
         public DonHangViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -82,6 +84,13 @@ public class DonHangAdapter extends RecyclerView.Adapter<DonHangAdapter.DonHangV
             tv_tenkhachhang = itemView.findViewById(R.id.tenkhachhang);
             tv_tongtien = itemView.findViewById(R.id.tongtien);
             tv_trangthai = itemView.findViewById(R.id.trangthai);
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            Intent i = new Intent(view.getContext(), ChiTietDonHang.class);
+            view.getContext().startActivity(i);
         }
     }
 
