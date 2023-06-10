@@ -60,7 +60,7 @@ public class DonHangAdapter extends RecyclerView.Adapter<DonHangAdapter.DonHangV
             }
         });
         holder.tv_tongtien.setText("Tổng tiền: "+chuyenSoThucSangChuoi(dh.getDh_tongtien())+"đ");
-        Log.e("check_0511",dh.getDh_trangthai());
+      //  Log.e("check_0511",dh.getDh_trangthai());
         holder.tv_trangthai.setText(dh.getDh_trangthai());
     }
 
