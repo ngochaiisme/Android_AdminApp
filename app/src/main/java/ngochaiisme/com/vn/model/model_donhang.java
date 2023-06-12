@@ -1,8 +1,9 @@
 package ngochaiisme.com.vn.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class model_donhang {
+public class model_donhang implements Serializable {
 
     private int dh_id;
     private String kh_id;
