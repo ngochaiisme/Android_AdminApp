@@ -31,22 +31,22 @@ public interface APIService {
             .build()
             .create(APIService.class);
 
-    @GET("getsanpham.php")
+    @GET("admin/getsanpham.php")
     Call<List<model_Sanpham>> getAllProducts();
 
-    @GET("getdonhang.php")
+    @GET("admin/getdonhang.php")
     Call<List<model_donhang>> getAllDonhang();
 
-    @GET("get_tenkh.php")
+    @GET("admin/get_tenkh.php")
     Call<ResponseBody> getTenKhachHang(@Query("id") String id);
 
-    @DELETE("deletesanpham.php")
+    @DELETE("admin/deletesanpham.php")
     Call<Void> deleteProduct(@Query("id") int id);
-    @DELETE("deletedonhang.php")
+    @DELETE("admin/deletedonhang.php")
     Call<Void> deleteDonhang(@Query("id") int id);
 
     @FormUrlEncoded
-    @POST("themsanpham.php")
+    @POST("admin/themsanpham.php")
     Call<Void> addProduct(
             @Field("sp_tensp") String sp_tensp,
             @Field("sp_giatien") float sp_giatien,
@@ -57,20 +57,20 @@ public interface APIService {
     );
 
     @FormUrlEncoded
-    @POST("get_ctdh.php")
+    @POST("admin/get_ctdh.php")
     Call<List<model_item_ctdh>> get_list_sanpham_ctdh(
             @Field ("dh_id") int dh_id
     );
 
     @FormUrlEncoded
-    @POST("capnhaptrangthaidonhang.php")
+    @POST("admin/capnhaptrangthaidonhang.php")
     Call<Void> capnhaptrangthaidonhang(
             @Field ("dh_id") int dh_id,
             @Field ("dh_trangthaimoi") String dh_trangthaimoi
     );
 
     @FormUrlEncoded
-    @POST("capnhapsanpham.php")
+    @POST("admin/capnhapsanpham.php")
     Call<Void> UpdateProduct(
             @Field("sp_id") int sp_id,
             @Field("sp_tensp") String sp_tensp,
