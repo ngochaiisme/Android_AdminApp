@@ -26,12 +26,14 @@ public interface APIService {
 
     Gson gson = new GsonBuilder()
             .setDateFormat("yyyy-MM-dd HH:mm:ss")
-            .create();
+            .create()
+            ;
     APIService service = new Retrofit.Builder()
             .baseUrl("http://192.168.43.28/banhang/")
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
-            .create(APIService.class);
+            .create(APIService.class)
+            ;
 
     @GET("admin/getsanpham.php")
     Call<List<model_Sanpham>> getAllProducts();
@@ -100,4 +102,19 @@ public interface APIService {
             @Field("sp_loaisp") int sp_loaisp
     );
 
+    @FormUrlEncoded
+    @POST("admin/add_newaccount.php")
+    Call<ResponseBody> add_newaccount(
+            @Field ("username") String username,
+            @Field ("phonenumber") String phonenumber,
+            @Field ("email") String email,
+            @Field ("password") String password
+    );
+
+    @FormUrlEncoded
+    @POST("admin/dangnhap.php")
+    Call<ResponseBody> dangnhap(
+            @Field ("username") String username,
+            @Field ("password") String password
+    );
 }

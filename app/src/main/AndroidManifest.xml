@@ -35,7 +35,10 @@
             android:exported="false" />
         <activity
             android:name=".activity.DangKi"
-            android:exported="false" />
+            android:exported="true"
+            >
+
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">
