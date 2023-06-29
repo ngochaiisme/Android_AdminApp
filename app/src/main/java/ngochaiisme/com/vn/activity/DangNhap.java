@@ -58,6 +58,13 @@ public class DangNhap extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        tv_forgotpass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(),Quenmatkhau.class);
+                startActivity(i);
+            }
+        });
 
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override

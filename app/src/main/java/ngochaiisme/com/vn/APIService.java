@@ -68,6 +68,8 @@ public interface APIService {
             @Field ("dh_id") int dh_id
     );
 
+
+
     @FormUrlEncoded
     @POST("admin/get_doanhthutheoloaisp.php")
     Call<List<model_doanhthutheoloaisp>> get_doanhthutheoloaisp(
@@ -116,5 +118,18 @@ public interface APIService {
     Call<ResponseBody> dangnhap(
             @Field ("username") String username,
             @Field ("password") String password
+    );
+
+    @FormUrlEncoded
+    @POST("admin/get_username_from_phonenumber.php")
+    Call<ResponseBody> getusername(
+            @Field ("phonenumber") String phonenumber
+    );
+
+    @FormUrlEncoded
+    @POST("admin/reset_password.php")
+    Call<ResponseBody> resetpassword(
+            @Field ("username") String username,
+            @Field ("newpassword") String newpassword
     );
 }
