@@ -56,6 +56,12 @@ dependencies {
     implementation 'com.github.dhaval2404:imagepicker:2.1'
     //firebase storage
     implementation 'com.google.firebase:firebase-storage-ktx:20.2.0'
+    //firebase auth
+    implementation("com.google.firebase:firebase-auth:22.0.0")
+    //firestore
+    implementation 'com.google.firebase:firebase-firestore-ktx:24.6.1'
+
+
 
 }
 //Apply plugin cho firebase

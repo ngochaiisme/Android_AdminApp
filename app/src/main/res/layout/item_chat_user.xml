@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    cardview:cardCornerRadius="8dp"
+    cardview:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="20dp">
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="50dp"
+            android:src="@drawable/img_letter"
+            android:layout_marginLeft="20dp" />
+
+        <TextView
+            android:id="@+id/tv_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="25dp"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/tv_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dương Ngọc Hải"
+            android:textSize="25dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:textColor="#403939" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

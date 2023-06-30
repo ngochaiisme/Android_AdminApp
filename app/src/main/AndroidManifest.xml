@@ -34,6 +34,19 @@
             android:name=".activity.DangNhap"
             android:exported="false" />
         <activity
+            android:name=".activity.Quenmatkhau"
+            android:exported="false" />
+        <activity
+            android:name=".activity.NhanOTP"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ResetPassword"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ChatActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".activity.DangKi"
             android:exported="true"
             >

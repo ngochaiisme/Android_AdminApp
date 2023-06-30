@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="67dp"
+        android:layout_marginTop="44dp"
+        android:layout_width="258dp"
+        android:layout_height="307dp"
+        android:src="@drawable/img_enterotp"
+        />
+    <TextView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="383dp"
+        android:layout_width="159dp"
+        android:layout_height="23dp"
+        android:text="OTP VERIFICATION"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        />
+    <TextView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="84dp"
+        android:layout_marginTop="419dp"
+        android:layout_width="252dp"
+        android:layout_height="18dp"
+        android:text="Enter the OTP send to: 0911385806"
+        android:textColor="#676565"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_otp"
+            android:layout_width="325dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="47dp"
+            android:layout_marginTop="472dp"
+            android:background="@drawable/rounded_bg"
+            android:gravity="center"
+            android:hint="Enter OTP"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tv_timer"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="185dp"
+        android:layout_marginTop="540dp"
+        android:layout_width="69dp"
+        android:layout_height="18dp"
+        android:text="05:00s"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="#E87C7C"
+        />
+    <TextView
+        android:id="@+id/tv_resend_otp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="115dp"
+        android:layout_marginTop="570dp"
+        android:layout_width="181dp"
+        android:layout_height="20dp"
+        android:text="Re-send code"
+        android:textSize="18dp"
+        android:textColor="#F81100"
+        android:textStyle="italic|bold"
+        android:gravity="center"
+        />
+    <Button
+        android:id="@+id/btn_submit"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="610dp"
+        android:layout_width="325dp"
+        android:layout_height="55dp"
+        android:text="Submit"
+        android:textAllCaps="false"
+        />
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
