@@ -17,15 +17,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import ngochaiisme.com.vn.R;
+import ngochaiisme.com.vn.Utils;
 import ngochaiisme.com.vn.adapter.Adapter_ChatUser;
+import ngochaiisme.com.vn.model.ChatMessage;
 import ngochaiisme.com.vn.model.Model_User;
 
 public class HopThu extends Fragment {
@@ -42,6 +47,7 @@ public class HopThu extends Fragment {
         mView = inflater.inflate(R.layout.activity_chat_list_user,container,false);
         InitView();
         getListUser();
+        listenMess();
         return mView;
     }
 
@@ -51,6 +57,18 @@ public class HopThu extends Fragment {
         rcv_listuser.setLayoutManager(layoutManager);
         rcv_listuser.setHasFixedSize(true);
     }
+
+
+
+    private void listenMess(){
+        db.collection(Utils.PATH_CHAT)
+                .whereEqualTo(Utils.RECEIVEDID, "0")
+                .addSnapshotListener(eventListener);
+    }
+
+    private final EventListener<QuerySnapshot> eventListener = (value, error) -> {
+        getListUser();
+    };
 
     private void getListUser() {
         db = FirebaseFirestore.getInstance();
