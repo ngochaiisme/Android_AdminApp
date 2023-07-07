@@ -1,0 +1,15 @@
+# Ứng dụng Android quản lý cửa hàng bán thiết bị di động dành cho Admin
+# # Một số hình ảnh demo sản phẩm
+![Đăng nhập](demo_picture/dangnhap.png)
+![Đăng kí]()
+![Quên mật khẩu b1]()
+![Quên mật khẩu b2]()
+![Quên mật khẩu b3]()
+![Nhắn tin 1]()
+![Nhắn tin 2]()
+![QL Sản phẩm 1]()
+![QL Sản phẩm 2]()
+![QL Sản phẩm 3]()
+![QL Đơn hàng 1]()
+![QL Đơn hàng 2]()
+![Thống kê]()
