@@ -14,7 +14,7 @@
 ![QL Đơn hàng 2](demo_picture/quanlydonhang2.png)
 ![Thống kê](demo_picture/thongke.png)
 # Kết quả đạt được
-Trong quá trình thực hiện đồ án ứng dụng, chúng tôi đã tổng kết được một số điểm tích cực như sau:
+Trong quá trình thực hiện đồ án ứng dụng, em đã tổng kết được một số điểm tích cực như sau:
 
 - Hiểu và vận dụng được kiến thức đã học vào đề tài.
 - Tìm kiếm thêm nhiều công cụ, kiến thức mới phục vụ cho đề tài.
